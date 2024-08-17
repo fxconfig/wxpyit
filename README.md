@@ -3,9 +3,14 @@
 ### 合并 wxpy + itchat-uos
 原来项目作者未更新，我合并了 wxpy 和 itchat-uos 改名为 wxpyit
 
+感谢原作者无私奉献
+- ItChat <https://github.com/littlecodersh/ItChat>
+- ItChat-UOS <https://github.com/189569400/ItChat-UOS>
+- wxpy <https://github.com/youfou/wxpy>
+
 > 改动部分
 - itchat config.py 文件中添加了一些 ***FAKE_HEADERS*** 
-- wxpy 去掉 Python2 兼容层，移动了一些文件
+- wxpy 去掉 Python2 兼容层，移动了一些文件。只用 Python3.9+ 可好？
 
 
 > **强烈建议仅使用小号运行机器人！**
@@ -22,7 +27,7 @@
 
 wxpyit 考虑只支持 Python 3.9 以上版本，因为语法糖~~实在香
 
-由于没有发布 PyPi，所以需要手动安装
+由于没有发布到 PyPi（还没学会怎么发布），所以需要手动安装
 ```sh
 git clone https://github.com/fxconfig/wxpyit.git
 cd wxpyit
