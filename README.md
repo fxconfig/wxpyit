@@ -20,29 +20,26 @@
 
 ## 轻松安装-不轻松，作者整努力修改 setup.py 中
 
-wxpyit 考虑只支持 Python 3.9 以上版本，因为语法糖确实香
+wxpyit 考虑只支持 Python 3.9 以上版本，因为语法糖~~实在香
 
 由于没有发布 PyPi，所以需要手动安装
 ```sh
 git clone https://github.com/fxconfig/wxpyit.git
+cd wxpyit
 ```
+然后
+- 想要开发调试本包 `python setup.py develop`
+
+- 想要直接安装本包 `python setup.py install`
 
 
-
-## 简单上手
-```sh
-git clone 我
-cd wxpy-itchat
-python setup.py install
-```
-
-
+## 使用
 
 #### 登陆微信:
 
 ```python
     # 导入模块
-    from wxpy-itchat import *
+    from wxpyit import *
     # 初始化机器人，扫码登陆
     bot = Bot()
 ```
@@ -67,7 +64,7 @@ python setup.py install
 ```python
     # 打印来自其他好友、群聊和公众号的消息
     @bot.register()
-    def print_others(msg):
+    def print_others(msg: Message):
         print(msg)
 
     # 回复 my_friend 的消息 (优先匹配后注册的函数!)
@@ -126,3 +123,8 @@ python setup.py install
 ----------------
 
 <https://github.com/fxconfig/wxpyit>
+
+## TodoList
+
+1. 文档使用 mkdocs 重构
+2. 包内引用改为从包名开始
