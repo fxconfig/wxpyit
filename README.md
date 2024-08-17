@@ -1,14 +1,11 @@
-# wxpy: 用 Python 玩微信  
+# wxpyit: 用 Python 玩微信  
 
-### 合并 wxpy+itchat-uos
-原来项目作者未更新，我合并了 wxpy 和 itchat-uos
+### 合并 wxpy + itchat-uos
+原来项目作者未更新，我合并了 wxpy 和 itchat-uos 改名为 wxpyit
 
-itchat config.py 文件中添加了一些 ***FAKE_HEADERS*** 
-
-
-### 微信机器人 / 可能是最优雅的微信个人号 API
-
-wxpy 在 itchat 的基础上，通过大量接口优化提升了模块的易用性，并进行丰富的功能扩展
+> 改动部分
+- itchat config.py 文件中添加了一些 ***FAKE_HEADERS*** 
+- wxpy 去掉 Python2 兼容层，移动了一些文件
 
 
 > **强烈建议仅使用小号运行机器人！**
@@ -16,28 +13,19 @@ wxpy 在 itchat 的基础上，通过大量接口优化提升了模块的易用�
 > 从 (17年6月下旬) 反馈来看，使用机器人存在一定概率被限制登录的可能性。
 > 
 > 主要表现为无法登陆 Web 微信 (但不影响手机等其他平台)。
-
-
-
-## 用来干啥
-
-一些常见的场景
-
-* 控制路由器、智能家居等具有开放接口的玩意儿
-* 运行脚本时自动把日志发送到你的微信
-* 加群主为好友，自动拉进群中
-* 跨号或跨群转发消息
-* 自动陪人聊天
-* 逗人玩
-* ...
-
-总而言之，可用来实现各种微信个人号的自动化操作
+>
+>  17 年以后新注册的微信号需要  启用 ***微信支付*** 之后才能扫码登录微信
 
 
 
 ## 轻松安装-不轻松，作者整努力修改 setup.py 中
 
-wxpy-itchat 考虑只支持 Python 3.9 以上版本，因为语法糖确实香
+wxpyit 考虑只支持 Python 3.9 以上版本，因为语法糖确实香
+
+由于没有发布 PyPi，所以需要手动安装
+```sh
+git clone https://github.com/fxconfig/wxpyit.git
+```
 
 
 
@@ -127,14 +115,14 @@ python setup.py install
 ## 说明文档
 ----------------
 
-<http://wxpy.readthedocs.io>
+<https://github.com/fxconfig/wxpyit>
 
 更新日志
 ----------------
 
-<https://github.com/youfou/wxpy/releases>
+<https://github.com/fxconfig/wxpyit>
 
 项目主页
 ----------------
 
-<https://github.com/fxconfig/wxpy-itchat>
+<https://github.com/fxconfig/wxpyit>

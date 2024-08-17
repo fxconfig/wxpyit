@@ -1,5 +1,5 @@
-from wxpyit import *
 
+from wxpyit import *
 import logging
 logging.basicConfig(level=logging.INFO)
 
@@ -14,10 +14,10 @@ bot = Bot(
 
 @bot.register(Friend,except_self=False)
 def just_print_friend(msg: Message):
-    print(f'Friend msg: {msg}')
+    print(f'Friend msg({msg.create_time}): {msg}')
 
 @bot.register(Group, except_self=False)
 def just_print_group(msg:Message):
-    print(f'Group  msg: {msg}')
+    print(f'Group  msg ({msg.create_time}): {msg}')
 
 bot.join()

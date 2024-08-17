@@ -306,7 +306,8 @@ def enhance_webwx_request(bot, sync_check_timeout=(10, 30), webwx_sync_timeout=(
     session = bot.core.s
 
     # get: 用于检查是否有新消息
-    sync_check_url = '{}/synccheck'.format(login_info.get('syncUrl', login_info['url']))
+    uuurl = login_info.get('syncUrl', login_info['url'])
+    sync_check_url = f'{uuurl}/synccheck'
 
     # post: 用于获取消息和更新联系人
     webwx_sync_url = '{li[url]}/webwxsync?sid={li[wxsid]}&skey={li[skey]}' \
@@ -324,6 +325,7 @@ def enhance_webwx_request(bot, sync_check_timeout=(10, 30), webwx_sync_timeout=(
                 kwargs['timeout'] = sync_check_timeout
 
                 # deviceid 应每次都变化，否则会导致该连接断开不及时，接收消息变慢
+                # 变了之后就表示是一台新的设备了，应该根据平台属性，获取固定的 deviceid
                 kwargs['params']['deviceid'] = 'e{}'.format(str(random.random())[2:17])
 
                 bot._sync_check_iterations += 1
