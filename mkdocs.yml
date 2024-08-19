@@ -1,0 +1,74 @@
+site_name: wxpyit 说明
+# site_url: https://www.mkdocs.org/
+# site_description: Project documentation with Markdown.
+# site_author: MkDocs Team
+
+#repo_name: LLMOps后台
+#repo_url: https://llmops.eaykd.com
+#edit_uri: blob/main/specs/
+
+docs_dir: docs
+
+theme:
+  name: material
+  #name: mkdocs
+  #name: readthedocs
+  language: zh
+  logo: assets/favicon.ico
+  favicon: assets/favicon.ico
+  # palette:
+  #   scheme: onebot  # 配色主题，在 assets/css/extra.css 定义的配色
+  features:
+    # - navigation.sections
+    - navigation.tabs
+    # - search.suggest
+    # - search.highlight
+
+markdown_extensions:
+  - admonition
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+
+
+# extra_javascript:
+#   - assets/js/config.js
+# extra_css:
+#   - assets/css/extra.css
+
+plugins:
+  - search
+  - autorefs
+
+  - glightbox:    # 图片点击可弹出大图
+       touchNavigation: true
+       loop: false
+       effect: zoom
+       slide_effect: slide
+       width: 100%
+       height: auto
+       zoomable: true
+       draggable: true
+       skip_classes:
+         - custom-skip-class-name
+       auto_caption: false
+       caption_position: bottom
+       background: white
+       shadow: true
+       manual: false
+
+  - mkdocstrings:  # 从 py 文件中读取注释
+      handlers:
+        python:
+          options:
+            docstring_section_style: list
+            members_order: source
+            show_root_heading: true
+            show_source: false
+            show_signature_annotations: true
+
+
+nav:
+  - 主页: README.md
+  - 机器人 Bot : bot.md
+

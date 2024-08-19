@@ -5,7 +5,7 @@ logging.basicConfig(level=logging.INFO)
 
 bot = Bot(
     cache_path="peter.pkl", 
-    console_qr=True, 
+    console_qr=False, 
     qr_callback=None, 
     login_callback=None,
     logout_callback=None
